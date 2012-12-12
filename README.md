@@ -28,6 +28,11 @@ After running go to this address:
 - 원본 http://mudchobo.tistory.com/525
 - express configure 을 이용한 public 폴더 참조 http://aproxacs.me/article/node-express-web-framework
 - WebAudio 는 http://webaudio-io2012.appspot.com 를 보고 http://www.html5rocks.com/en/tutorials/webaudio/games 의 SOUND EFFECTS(gun.js & buffer-loader.js) 부분을 참조함
-- gitHub commit & putsh - http://teragoon.wordpress.com/2012/03/30/node-js_cloud9_github/ ( 먼저 이렇게 셋팅하고 : git remote set-url origin git@github.com:diginori/oldboy.git ) 
+- gitHub commit & putsh - http://teragoon.wordpress.com/2012/03/30/node-js_cloud9_github/ ( 먼저 이렇게 셋팅하고 : git remote set-url origin git@github.com:diginori/oldboy.git )
+    $ git remote set-url origin git@github.com:diginori/oldboy.git
+    $ git status
+    $ git add ./
+    $ git commit -a -m "아버지가장에들어가시고"
+    $ git push origin
 
 ###굿 is Good
