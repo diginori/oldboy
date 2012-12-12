@@ -1,11 +1,11 @@
 function MachineGun(context) {
   var ctx = this;
   var loader = new BufferLoader(context, [
-                                'sounds/buk.wav',
-                                'sounds/chuimsae.wav',
-                                'sounds/ggoenggwari.wav',
-                                'sounds/janggo.wav',
-                                'sounds/jing.wav'
+                                '/sounds/buk.wav',
+                                '/sounds/chuimsae.wav',
+                                '/sounds/janggo.wav',
+                                '/sounds/jing.wav',
+                                '/sounds/kkwaenggwari.wav'
                                 ], onLoaded);
 
   function onLoaded(buffers) {

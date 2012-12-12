@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html>
+
+    <head>
+        
+        <title>jQuery Mobile Web App</title>
+        <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        
+        <script src="/js/buffer-loader.js"></script>
+        <script src="/js/gun.js"></script>
+        
+        <script>
+             $(window).load(function(){
+                $(".playButton").click(function(){
+                    var thisID = this.id;        
+                    play(thisID);
+                });
+            });
+            
+            function play(message){
+                var soundsign = message.split("-"); 
+
+                var type = soundsign[0];
+                var rounds = soundsign[1];
+                var interval = soundsign[2];
+                
+                mgun.shootRound(type, rounds, interval);
+            }
+        </script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+  			try{
+  				context = new webkitAudioContext();
+  			}catch(e){
+  				alert("Web Audio API is not supported in this browser");
+  			}
+				mgun = new MachineGun(context);
+			});
+		</script>
+        
+    </head> 
+
+<body> 
+    <!--메인페이지-->
+    <div data-role="page" id="page2">
+        <div data-role="header">
+            <h1>북</h1>
+        </div>
+     
+        <div data-role="content"> 
+            <img class="playButton" id="0-1-0.0" src="/img/buk.png"/ width="100%">
+        </div>
+    
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div>
+        
+    </div>
+
+</body>
+</html>
