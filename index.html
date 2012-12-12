@@ -1,15 +1,20 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>초간단 채팅</title>
+        <title>digiNORI:Socket.IO</title>
         <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
+        
+        <script src="js/buffer-loader.js"></script>
+        <script src="js/gun.js"></script>
+        
         <script>
             var socket = io.connect();
             
             $(document).ready(function(){
                 socket.on("chat", function(data){
                     $("ul").prepend("<li>" + data + "</li>");
+                    play(data);
                 });
                 
                 // 보내기 엔터이벤트
@@ -25,13 +30,75 @@
                 });
             });
             
+            $(window).load(function(){
+                $(".playButton").click(function(){
+                    var thisID = this.id;        
+                    send(thisID);
+                });
+            });
+            
             function send(message){
+                play(message);
                 socket.emit("chat", message);
                 $("ul").prepend("<li>" + message + "</li>");
             }
+            
+            function play(message){
+                var soundsign = message.split("-"); 
+
+                var type = soundsign[0];
+                var rounds = soundsign[1];
+                var interval = soundsign[2];
+                
+                mgun.shootRound(type, rounds, interval);
+            }
+ 
         </script>
+        
+        <script>
+        	document.addEventListener('DOMContentLoaded',function(){
+  			try{
+  				context = new webkitAudioContext();
+  			}catch(e){
+  				alert("Web Audio API is not supported in this browser");
+  			}
+				mgun = new MachineGun(context);
+			});
+		</script>
+        
     </head>
     <body>
+        digiNORI + node.js + WebAudio
+        <p></p>
+        <iframe width="300" height="169" src="http://www.youtube.com/embed/VElZYOkzUKg" frameborder="0" allowfullscreen></iframe>
+        <p></p>
+        <audio controls preload="auto" src="http://cloud.github.com/downloads/diginori/digiNORI.js/buk.wav"></audio>
+        <p></p>
+        <img class="playButton" id="0-1-0.0" src="img/buk.png"/>
+        <img class="playButton" id="0-2-0.1" src="img/buk.png"/>
+        <img class="playButton" id="0-3-0.2" src="img/buk.png"/>
+        <img class="playButton" id="0-4-0.3" src="img/buk.png"/>
+        <p></p>
+        <img class="playButton" id="1-1-0" src="img/chuimsae.png"/>
+        <img class="playButton" id="1-2-0.1" src="img/chuimsae.png"/>
+        <img class="playButton" id="1-3-0.2" src="img/chuimsae.png"/>
+        <img class="playButton" id="1-4-0.3" src="img/chuimsae.png"/>
+        <p></p>
+        <img class="playButton" id="2-1-0" src="img/ggoenggwari.png"/>
+        <img class="playButton" id="2-2-0.1" src="img/ggoenggwari.png"/>
+        <img class="playButton" id="2-3-0.2" src="img/ggoenggwari.png"/>
+        <img class="playButton" id="2-4-0.3" src="img/ggoenggwari.png"/>
+        <p></p>
+        <img class="playButton" id="3-1-0" src="img/janggo.png"/>
+        <img class="playButton" id="3-2-0.1" src="img/janggo.png"/>
+        <img class="playButton" id="3-3-0.2" src="img/janggo.png"/>
+        <img class="playButton" id="3-4-0.3" src="img/janggo.png"/>
+        <p></p>
+        <img class="playButton" id="4-1-0" src="img/jing.png"/>
+        <img class="playButton" id="4-2-0.1" src="img/jing.png"/>
+        <img class="playButton" id="4-3-0.2" src="img/jing.png"/>
+        <img class="playButton" id="4-4-0.3" src="img/jing.png"/>
+        <p></p>
         <input type="text" id="inputMessage" name="inputMessage"/>
         <ul></ul>
     </body>
