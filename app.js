@@ -17,6 +17,8 @@ app.configure(function(){
 
 app.listen(port);
 
+console.log("PORT:"+port);
+
 app.get("/", function(req, res){
     res.sendfile(__dirname + "/index.html");
 });
