@@ -4,6 +4,8 @@ var app = module.exports = express.createServer();
 
 var io = require("socket.io").listen(app);
 
+process.env.PORT = 8888;
+
 // 실제 heroku에서는 PORT를 사용. 현재 Cloud9ide에선 C9_PORT사용
 var port = process.env.C9_PORT;
 if (!port){
