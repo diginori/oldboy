@@ -33,7 +33,7 @@
             });
             
             $(window).load(function(){
-                $(".playButton").click(function(){
+                $(".playButton").mousedown(function(){
                     var thisID = this.id;        
                     send(thisID);
                 });

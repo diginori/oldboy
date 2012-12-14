@@ -13,7 +13,7 @@
         
         <script>
              $(window).load(function(){
-                $(".playButton").click(function(){
+                $(".playButton").mousedown(function(){
                     var thisID = this.id;        
                     play(thisID);
                 });
@@ -26,7 +26,8 @@
                 var rounds = soundsign[1];
                 var interval = soundsign[2];
                 
-                mgun.shootRound(type, rounds, interval);
+                //mgun.shootRound(type, rounds, interval);
+                mgun.playSound(type);
             }
         </script>
         
@@ -51,7 +52,8 @@
         </div>
      
         <div data-role="content"> 
-            <img class="playButton" id="0-1-0.0" onclick="play(0-3-0.0);" src="/img/buk.png"/ width="100%">
+            <!--<img class="playButton" id="0-1-0.0" onclick="play(0-3-0.0);" src="/img/buk.png"/ width="100%">-->
+            <img class="playButton" id="0-1-0.0" src="/img/buk.png"/ width="100%">
         </div>
     
         <div data-role="footer">

@@ -28,6 +28,11 @@ MachineGun.prototype.shootRound = function(type, rounds, interval, random, rando
   }
 }
 
+MachineGun.prototype.playSound = function(type) {
+    var source = this.makeSource(this.buffers[type]);
+    source.noteOn(0);
+}
+
 MachineGun.prototype.makeSource = function(buffer) {
   var source = context.createBufferSource();
   var compressor = context.createDynamicsCompressor();

@@ -31,5 +31,7 @@ After running go to this address:
 - gitHub commit & putsh - http://teragoon.wordpress.com/2012/03/30/node-js_cloud9_github/ ( 먼저 이렇게 셋팅하고 : git remote set-url origin git@github.com:diginori/oldboy.git )
 - git remote set-url origin git@github.com:diginori/oldboy.git ; git status ;git add ./ ; git commit -a -m "아버지가장에들어가시고" ; git push origin
 - 모바일 페이지는 http://blog.daum.net/_blog/BlogTypeView.do?blogid=0YpeN&articleno=3&categoryId=2&regdt=20110523134219#ajax_history_home 에서 시작
+- 반응형웹등을 제공하는 오픈 CSS 뭉치 : Bootstrap from Twitter : http://helloworld.naver.com/helloworld/67876 에서 기본을 확인 / http://www.initializr.com/ 를 이용해 샘플 프로젝트를 다운(html/bs에 설치)
+- http://twitter.github.com/bootstrap/components.html , javascript.html 를 참조 하여 작성
 
 ###굿 is Good
